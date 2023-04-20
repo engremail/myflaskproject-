@@ -1,0 +1,83 @@
+linux
+sudo apt install python3-pip
+
+all operating syste download anaconda
+
+on windows make sure location
+of python interpreter include 
+your path envirnment variable
+check type path""cmd
+error
+windows settings envirnment variable
+
+note:
+  avoids installing flask into
+  global python envirnment gives
+  exact control over librarires
+  used in application
+
+vscode::
+  conrtol+shift+p
+  select: 
+      python create envirnment
+      create new terminal ctrl+ shift+
+
+vscode automatically activate
+pip -m pip install flask
+
+linux:: sourse.ven/bin/activate
+windows:.ven\Sripts\Activate.ps1
+
+          decorator to map url route / function
+flask app.route
+
+u can use multiple decorator on same function one per line
+depending in how many different routes 
+
+python - m flask run
+
+python -m pip install flask 
+
+
+if you use diffener file nane??
+  envirnment variable named Flask_App and set its to
+  choseb file 
+
+
+debugging gives u oppurtunity to pasue line of code
+debug also automatically saves any modified 
+
+
+
+breakpoint pause some line of code
+
+debug and run
+    create json file  
+    add configuration
+    add flask
+
+
+python with -m flask when it starts the debugger. 
+It also defines the FLASK_APP environment variable in the env property 
+to identify the startup file, which is app.py by default, but allows 
+you to easily specify a different file. If you want to change the host
+ and/or port, you can use the args array.
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+ Note: If the env entry in your configuration contains "FLASK_APP":
+  "${workspaceFolder}/app.py", change it to "FLASK_APP": "app.py" as shown above
+  . Otherwise you may encounter error messages like "Cannot import module C" where C 
+  is the drive letter where your project folder resides.
+
+Note: Once launch.json is created, an Add Configuration button appears in the editor.
+ That button displays a list of additional configurations to add to the beginning of
+  the configuration list. (The Run > Add Configuration menu command does the same action.
+  ).
+
+Save launch.json (Ctrl+S). In the debug configuration dropdown list select the Python: 
+Flask configuration.
+

@@ -1,0 +1,37 @@
+In Python, a decorator is a design pattern that allows you to
+ modify the functionality of a function by wrapping it in 
+ another function. The outer function is called the decorator, 
+which takes the original function as an argument and returns
+ a modified version of it123. Decorators provide a simple 
+ syntax for calling higher-order functions1.
+
+
+ However, to understand decorators, it is enough to think 
+ about functions as something that turns given
+  arguments into a value.
+
+
+
+  set Flask_App=app.py
+
+###debug true
+  set Flask_DEBUG=1
+
+where is this file located
+href=""
+
+
+
+
+
+  What is the use of autopep8?
+autopep8 automatically formats Python code to conform to the PEP 8 style guide. It uses the pycodestyle utility to determine what parts of the code needs to be formatted. autopep8 is capable of fixing most of the formatting issues that 
+can be reported by pycodestyle.
+
+###########################  this date is attribute
+   <p> By {{post.author }} on {{post.date}}</p>
+
+##                this posts is variable
+    {% for post in posts %}   
+and this argument is equal to our post dictionary dumy data
+return render_template('home.html', posts=posts)    

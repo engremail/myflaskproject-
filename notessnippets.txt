@@ -1,0 +1,197 @@
+In VS Code, select File () > Preferences > 
+Configure User Snippets.
+
+After VS Code opens html.json, add the following entry
+ within the existing curly
+
+
+Note: If you're not seeing the latest changes, you might 
+need to do a hard refresh
+ on the page to avoid seeing a cached file.
+
+
+Accordingly, developers typically omit the virtual environment
+ folder from source control and instead describe the app's
+  dependencies using a requirements.txt file.
+
+Although you can create the file by hand, you can also use
+ the pip freeze command to generate the file based on the
+  exact libraries installed in the activated environment:
+
+With your chosen environment selected using the Python: 
+Select Interpreter command, run the Terminal: 
+Create New Terminal command (Ctrl+Shift+`)) to open
+ a terminal with that environment activated. 
+
+ use the pip freeze 
+command to generate the file based 
+on the exact libraries installed in the activated
+ environment:
+
+
+n the terminal, run pip freeze > requirements.txt 
+to create the requirements.txt file in your project
+ folder.
+
+Anyone (or any build server) that receives a copy 
+of the project needs only to run the pip install -r
+ requirements.txt command to reinstall the packages 
+ in the original environment. (The recipient still needs
+
+
+
+
+Note: pip freeze lists all the Python packages
+ you have installed in the current environment,
+  including packages you aren't currently using. 
+  The command also lists packages with exact version
+   numbers, which you might want to convert to ranges
+    for more flexibility in the future. For more 
+    information, see Requirements Files in the pip 
+    command documentation.
+
+
+ it's helpful to refactor the pieces of app.py 
+ into separate files.
+
+
+Open the debug configuration file launch.json and update the 
+env property as follows to point to the startup object:
+
+
+Open the debug configuration file launch.json and update
+ the env property as follows to point to the startup object:
+
+"env": {
+    "FLASK_APP": "hello_app.webapp"
+},
+
+
+
+
+Run the app in the debugger again to make sure everything works. 
+To run the app outside of the VS Code debugger, use the following steps
+ from a terminal:
+
+Set an environment variable for FLASK_APP. On Linux and macOS, use 
+export set FLASK_APP=webapp; on Windows use $env:FLASK_APP=webapp
+ if you're using PowerShell, or set FLASK_APP=webapp if you're using 
+ Command Prompt.
+Navigate into the hello_app folder, then launch the program using
+python -m flask run
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cntrl_shift+p
+
+python -m pip install flask
+source .venv/bin/activate (Linux/macOS) or .venv\Scripts\Activate.ps1 
+
+cnrl+ n
+
+You can use multiple decorators on the same function, one per line, depending on how many different routes you want to map to the same function.
+
+
+python -m flask run
+
+python -m pip install flask
+
+ if you want to run the development server on a different IP address or
+  port, use the host and port command-line arguments,
+   as with --host=0.0.0.0 --port=80.
+
+
+
+Tip: When using a different filename than app.py, such as webapp.py, 
+you will need to define an environment variable named FLASK_APP and set
+ its value to your chosen file. Flask's development server then uses
+  the value of FLASK_APP instead of the default file app.py.
+   For more information, see Flask command line interface.   .
+
+
+
+ Set a breakpoint at the first line of code in the hello_there function
+  (now = datetime.now()) by doing any one of the following:  
+Switch to the Run and Debug view in VS Code (using the left-side
+ activity bar or Ctrl+Shift+D). You may see the message "To customize 
+ Run and Debug create a launch.json file". This means that you don't yet 
+ have a launch.json file containing debug configurations. VS Code can create
+  that for you if you click on the create a launch.json file link:
+
+
+
+ip: Flask developers often use the flask-babel extension for date formatting
+, rather than strftime, as flask-babel takes locales and timezones into
+ consideration.
+
+
+
+
+In the hello_flask folder, create a folder named static.
+
+Within the static folder, create a file named site.css with the 
+following contents. After entering this code, also observe the syntax 
+highlighting that VS Code provides for CSS files, including a color preview:
+
+In templates/hello_there.html, add the following line before the </head>
+ tag, which creates a reference to the stylesheet.
+
+<link rel="stylesheet" type="text/css"
+ href="{{ url_for('static', filename='site.css')}}" />
+
+
+
+Flask's url_for tag that is used here, creates the appropriate path to the
+ file. Because it can accept variables as arguments, url_for allows you to 
+ programmatically control the generated path, if desired.
+
+Also in templates/hello_there.html, replace the contents <body> element
+ with the following markup that uses the message style instead of a <strong>
+  tag (and also displays a message if you just use a hello/ URL without a 
+  name):
+
+
+
+
+In the static folder, create a JSON data file named data.json with the 
+following contents (which are meaningless sample data):
+
+{
+  "01": {
+    "note": "This data is very simple because we're demonstrating only
+     the mechanism."
+  }
+}
+
+
+
+
+In app.py, add a function with the route /api/data that returns the
+ static data file using the send_static_file method:
+
+@app.route("/api/data")
+def get_data():
+    return app.send_static_file("data.json")
+Run the app and navigate to the /api/data endpoint to see that the 
+static file is returned. Stop the app when you're done.
+
+
+Each link again uses Flask's url_for tag to generate 
+a link at runtime for the matching route.

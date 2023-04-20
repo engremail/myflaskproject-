@@ -1,0 +1,31 @@
+cs50  flask is good
+
+
+command
+
+mo index html templates  
+
+get/ search?q=cat http/1.1
+host   === google.com
+
+
+app.route("/), method=["POST]
+
+
+
+
+               is placeholder
+request.args["name"]
+
+
+request.get-- bydaulft
+
+404
+
+405 bydaulft support get is the moethod=["get]
+
+is it good to secure url use
+        POST
+
+request.args ---key
+request.form---form 
